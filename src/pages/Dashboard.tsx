@@ -773,30 +773,31 @@ const Dashboard = () => {
                       <div className="p-4 bg-slate-800/30 rounded-lg border border-slate-700">
                         <h3 className="font-semibold mb-2 flex items-center gap-2">
                           <Icon name="Phone" size={18} className="text-green-400" />
-                        Техническая поддержка
-                      </h3>
-                      <p className="text-sm text-slate-400 mb-3">
-                        Свяжитесь с нами для получения помощи по диагностике
-                      </p>
-                      <Button variant="outline" size="sm">
-                        Связаться
-                      </Button>
-                    </div>
+                          Техническая поддержка
+                        </h3>
+                        <p className="text-sm text-slate-400 mb-3">
+                          Свяжитесь с нами для получения помощи по диагностике
+                        </p>
+                        <Button variant="outline" size="sm">
+                          Связаться
+                        </Button>
+                      </div>
 
-                    <div className="p-4 bg-slate-800/30 rounded-lg border border-slate-700">
-                      <h3 className="font-semibold mb-2 flex items-center gap-2">
-                        <Icon name="Info" size={18} className="text-purple-400" />
-                        О приложении
-                      </h3>
-                      <p className="text-sm text-slate-400">
-                        HeaterDiag Pro v2.1.4
-                        <br />
-                        Совместимо: Webasto ThermoTop / Air Top, Eberspächer Airtronic / Hydronic
-                      </p>
+                      <div className="p-4 bg-slate-800/30 rounded-lg border border-slate-700">
+                        <h3 className="font-semibold mb-2 flex items-center gap-2">
+                          <Icon name="Info" size={18} className="text-purple-400" />
+                          О приложении
+                        </h3>
+                        <p className="text-sm text-slate-400">
+                          HeaterDiag Pro v2.1.4
+                          <br />
+                          Совместимо: Webasto ThermoTop / Air Top, Eberspächer Airtronic / Hydronic
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </div>
             </TabsContent>
           </Tabs>
         )}
