@@ -622,31 +622,157 @@ const Dashboard = () => {
             </TabsContent>
 
             <TabsContent value="help" className="animate-fade-in">
-              <Card className="bg-slate-900/50 border-slate-800">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Icon name="HelpCircle" size={20} />
-                    Справочная информация
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="p-4 bg-slate-800/30 rounded-lg border border-slate-700">
-                      <h3 className="font-semibold mb-2 flex items-center gap-2">
-                        <Icon name="BookOpen" size={18} className="text-blue-400" />
-                        Руководство пользователя
-                      </h3>
-                      <p className="text-sm text-slate-400 mb-3">
-                        Подробная инструкция по работе с приложением и расшифровка кодов ошибок
-                      </p>
-                      <Button variant="outline" size="sm">
-                        Открыть руководство
-                      </Button>
+              <div className="space-y-6">
+                <Card className="bg-slate-900/50 border-slate-800">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <Icon name="ShoppingCart" size={20} />
+                      Совместимые адаптеры
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div className="p-4 bg-blue-500/10 rounded-lg border border-blue-500/30">
+                        <div className="flex items-start gap-4">
+                          <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <Icon name="Bluetooth" size={24} className="text-blue-400" />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="font-semibold mb-2">Bluetooth адаптеры</h3>
+                            <div className="space-y-2 text-sm">
+                              <div className="flex items-start gap-2">
+                                <Icon name="CheckCircle" size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
+                                <div>
+                                  <p className="font-medium">ELM327 Bluetooth v2.1</p>
+                                  <p className="text-slate-400">Поддержка: Webasto, Eberspächer | Цена: ~1500₽</p>
+                                </div>
+                              </div>
+                              <div className="flex items-start gap-2">
+                                <Icon name="CheckCircle" size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
+                                <div>
+                                  <p className="font-medium">Vgate iCar Pro Bluetooth 4.0</p>
+                                  <p className="text-slate-400">Профессиональный | Цена: ~2800₽</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="p-4 bg-purple-500/10 rounded-lg border border-purple-500/30">
+                        <div className="flex items-start gap-4">
+                          <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <Icon name="Usb" size={24} className="text-purple-400" />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="font-semibold mb-2">USB OTG адаптеры</h3>
+                            <div className="space-y-2 text-sm">
+                              <div className="flex items-start gap-2">
+                                <Icon name="CheckCircle" size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
+                                <div>
+                                  <p className="font-medium">K+DCAN USB кабель</p>
+                                  <p className="text-slate-400">Прямое подключение | Цена: ~800₽</p>
+                                </div>
+                              </div>
+                              <div className="flex items-start gap-2">
+                                <Icon name="CheckCircle" size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
+                                <div>
+                                  <p className="font-medium">VAG-COM USB адаптер</p>
+                                  <p className="text-slate-400">Стабильное соединение | Цена: ~1200₽</p>
+                                </div>
+                              </div>
+                              <div className="flex items-start gap-2">
+                                <Icon name="AlertCircle" size={16} className="text-orange-400 mt-0.5 flex-shrink-0" />
+                                <div>
+                                  <p className="font-medium">Требуется OTG-переходник</p>
+                                  <p className="text-slate-400">USB Type-C/Micro → USB-A | Цена: ~200₽</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="p-4 bg-green-500/10 rounded-lg border border-green-500/30">
+                        <div className="flex items-start gap-4">
+                          <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <Icon name="Wifi" size={24} className="text-green-400" />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="font-semibold mb-2">WiFi адаптеры</h3>
+                            <div className="space-y-2 text-sm">
+                              <div className="flex items-start gap-2">
+                                <Icon name="CheckCircle" size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
+                                <div>
+                                  <p className="font-medium">ELM327 WiFi</p>
+                                  <p className="text-slate-400">Беспроводной, до 15м | Цена: ~1800₽</p>
+                                </div>
+                              </div>
+                              <div className="flex items-start gap-2">
+                                <Icon name="CheckCircle" size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
+                                <div>
+                                  <p className="font-medium">OBDLink MX WiFi</p>
+                                  <p className="text-slate-400">Премиум качество | Цена: ~4500₽</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
-                    <div className="p-4 bg-slate-800/30 rounded-lg border border-slate-700">
-                      <h3 className="font-semibold mb-2 flex items-center gap-2">
-                        <Icon name="Phone" size={18} className="text-green-400" />
+                    <div className="mt-6 p-4 bg-slate-800/50 rounded-lg border border-slate-700">
+                      <h4 className="font-semibold mb-3 flex items-center gap-2">
+                        <Icon name="Info" size={18} className="text-blue-400" />
+                        Советы по выбору адаптера
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-slate-400">
+                        <div className="flex items-start gap-2">
+                          <Icon name="CheckCircle" size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
+                          <p>Проверяйте совместимость с вашей моделью отопителя</p>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <Icon name="CheckCircle" size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
+                          <p>USB адаптеры надёжнее для длительной диагностики</p>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <Icon name="CheckCircle" size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
+                          <p>WiFi удобнее для работы в салоне автомобиля</p>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <Icon name="CheckCircle" size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
+                          <p>Покупайте в проверенных магазинах (остерегайтесь подделок)</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-slate-900/50 border-slate-800">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <Icon name="HelpCircle" size={20} />
+                      Справочная информация
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div className="p-4 bg-slate-800/30 rounded-lg border border-slate-700">
+                        <h3 className="font-semibold mb-2 flex items-center gap-2">
+                          <Icon name="BookOpen" size={18} className="text-blue-400" />
+                          Руководство пользователя
+                        </h3>
+                        <p className="text-sm text-slate-400 mb-3">
+                          Подробная инструкция по работе с приложением и расшифровка кодов ошибок
+                        </p>
+                        <Button variant="outline" size="sm">
+                          Открыть руководство
+                        </Button>
+                      </div>
+
+                      <div className="p-4 bg-slate-800/30 rounded-lg border border-slate-700">
+                        <h3 className="font-semibold mb-2 flex items-center gap-2">
+                          <Icon name="Phone" size={18} className="text-green-400" />
                         Техническая поддержка
                       </h3>
                       <p className="text-sm text-slate-400 mb-3">
