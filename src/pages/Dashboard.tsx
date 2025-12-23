@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import * as React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
@@ -8,15 +8,15 @@ import Icon from '@/components/ui/icon';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 
 const Dashboard = () => {
-  const [activeTab, setActiveTab] = useState('diagnostic');
-  const [isConnected, setIsConnected] = useState(false);
-  const [isScanning, setIsScanning] = useState(false);
-  const [heaterBrand, setHeaterBrand] = useState<'webasto' | 'eberspacher'>('webasto');
-  const [temperature, setTemperature] = useState(22);
-  const [voltage, setVoltage] = useState(12.4);
-  const [fuelPressure, setFuelPressure] = useState(1.2);
+  const [activeTab, setActiveTab] = React.useState('diagnostic');
+  const [isConnected, setIsConnected] = React.useState(false);
+  const [isScanning, setIsScanning] = React.useState(false);
+  const [heaterBrand, setHeaterBrand] = React.useState<'webasto' | 'eberspacher'>('webasto');
+  const [temperature, setTemperature] = React.useState(22);
+  const [voltage, setVoltage] = React.useState(12.4);
+  const [fuelPressure, setFuelPressure] = React.useState(1.2);
 
-  const [temperatureData, setTemperatureData] = useState([
+  const [temperatureData, setTemperatureData] = React.useState([
     { time: '10:00', temp: 18 },
     { time: '10:05', temp: 20 },
     { time: '10:10', temp: 22 },
@@ -25,7 +25,7 @@ const Dashboard = () => {
     { time: '10:25', temp: 28 },
   ]);
 
-  const [voltageData, setVoltageData] = useState([
+  const [voltageData, setVoltageData] = React.useState([
     { time: '10:00', voltage: 12.2 },
     { time: '10:05', voltage: 12.3 },
     { time: '10:10', voltage: 12.4 },
@@ -49,7 +49,7 @@ const Dashboard = () => {
     { name: 'Время работы', value: '1247 ч', status: 'normal', icon: 'Clock' },
   ];
 
-  useEffect(() => {
+  React.useEffect(() => {
     const interval = setInterval(() => {
       if (isConnected) {
         setTemperature(prev => Math.min(85, prev + Math.random() * 2 - 0.5));
