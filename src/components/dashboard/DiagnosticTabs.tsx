@@ -237,13 +237,13 @@ const DiagnosticTabs: React.FC<DiagnosticTabsProps> = ({
             <CardContent>
               <div className="mb-4">
                 <p className="text-4xl font-bold text-purple-400">{voltage.toFixed(2)}V</p>
-                <p className="text-sm text-slate-400">Норма: 12.0-14.5V</p>
+                <p className="text-sm text-slate-400">Норма: 24.0-28.0V</p>
               </div>
               <ResponsiveContainer width="100%" height={200}>
                 <LineChart data={voltageData}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
                   <XAxis dataKey="time" stroke="#64748b" />
-                  <YAxis stroke="#64748b" domain={[11, 15]} />
+                  <YAxis stroke="#64748b" domain={[22, 29]} />
                   <Tooltip 
                     contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #334155' }}
                     labelStyle={{ color: '#94a3b8' }}

@@ -11,7 +11,7 @@ const Dashboard = () => {
   const [isScanning, setIsScanning] = React.useState(false);
   const [heaterBrand, setHeaterBrand] = React.useState<'webasto' | 'eberspacher'>('webasto');
   const [temperature, setTemperature] = React.useState(22);
-  const [voltage, setVoltage] = React.useState(12.4);
+  const [voltage, setVoltage] = React.useState(24.8);
   const [fuelPressure, setFuelPressure] = React.useState(1.2);
   const [connectionType, setConnectionType] = React.useState<'bluetooth' | 'usb' | 'wifi' | null>(null);
   const [showConnectionDialog, setShowConnectionDialog] = React.useState(false);
@@ -26,12 +26,12 @@ const Dashboard = () => {
   ]);
 
   const [voltageData, setVoltageData] = React.useState([
-    { time: '10:00', voltage: 12.2 },
-    { time: '10:05', voltage: 12.3 },
-    { time: '10:10', voltage: 12.4 },
-    { time: '10:15', voltage: 12.5 },
-    { time: '10:20', voltage: 12.4 },
-    { time: '10:25', voltage: 12.3 },
+    { time: '10:00', voltage: 24.4 },
+    { time: '10:05', voltage: 24.6 },
+    { time: '10:10', voltage: 24.8 },
+    { time: '10:15', voltage: 25.0 },
+    { time: '10:20', voltage: 24.8 },
+    { time: '10:25', voltage: 24.6 },
   ]);
 
   const errorCodes = [
@@ -53,7 +53,7 @@ const Dashboard = () => {
     const interval = setInterval(() => {
       if (isConnected) {
         setTemperature(prev => Math.min(85, prev + Math.random() * 2 - 0.5));
-        setVoltage(prev => Math.max(11, Math.min(14, prev + Math.random() * 0.2 - 0.1)));
+        setVoltage(prev => Math.max(22, Math.min(28, prev + Math.random() * 0.4 - 0.2)));
         setFuelPressure(prev => Math.max(0.8, Math.min(1.5, prev + Math.random() * 0.1 - 0.05)));
       }
     }, 2000);
