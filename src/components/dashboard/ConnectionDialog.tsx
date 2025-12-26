@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
+import { useNavigate } from 'react-router-dom';
 
 interface ConnectionDialogProps {
   handleConnectionSelect: (type: 'bluetooth' | 'usb' | 'wifi') => void;
@@ -12,14 +13,27 @@ const ConnectionDialog: React.FC<ConnectionDialogProps> = ({
   handleConnectionSelect,
   setShowConnectionDialog,
 }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col items-center justify-center min-h-[60vh]">
       <Card className="bg-slate-900/50 border-slate-800 max-w-4xl w-full">
         <CardHeader>
-          <CardTitle className="text-2xl flex items-center gap-2">
-            <Icon name="Cable" size={28} />
-            Выберите способ подключения
-          </CardTitle>
+          <div className="flex items-center justify-between">
+            <CardTitle className="text-2xl flex items-center gap-2">
+              <Icon name="Cable" size={28} />
+              Выберите способ подключения
+            </CardTitle>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => navigate('/guide')}
+              className="flex items-center gap-2"
+            >
+              <Icon name="BookOpen" size={16} />
+              Подробная инструкция
+            </Button>
+          </div>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

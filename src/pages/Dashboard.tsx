@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
+import { useNavigate } from 'react-router-dom';
 import DashboardHeader from '@/components/dashboard/DashboardHeader';
 import ConnectionDialog from '@/components/dashboard/ConnectionDialog';
 import DiagnosticTabs from '@/components/dashboard/DiagnosticTabs';
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = React.useState('diagnostic');
   const [isConnected, setIsConnected] = React.useState(false);
   const [isScanning, setIsScanning] = React.useState(false);
@@ -118,10 +120,16 @@ const Dashboard = () => {
             <p className="text-slate-400 mb-6 max-w-md">
               Выберите способ подключения диагностического адаптера к отопителю
             </p>
-            <Button onClick={handleConnect} size="lg" className="bg-blue-600 hover:bg-blue-700">
-              <Icon name="Cable" size={20} className="mr-2" />
-              Выбрать способ подключения
-            </Button>
+            <div className="flex gap-4">
+              <Button onClick={handleConnect} size="lg" className="bg-blue-600 hover:bg-blue-700">
+                <Icon name="Cable" size={20} className="mr-2" />
+                Выбрать способ подключения
+              </Button>
+              <Button onClick={() => navigate('/guide')} size="lg" variant="outline">
+                <Icon name="BookOpen" size={20} className="mr-2" />
+                Инструкция
+              </Button>
+            </div>
           </div>
         ) : showConnectionDialog ? (
           <ConnectionDialog
